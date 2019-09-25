@@ -49,6 +49,11 @@ const myModule = {
     unsubscribeToCounter({dispatch}) {
       dispatch('closeDBChannel', {clearModule: true})
     },
+    easyFirestoreSetalueBatchSyncIncrement({dispatch}){
+      dispatch('setFirestoreCounterToZero');
+      dispatch('batchSync');
+      dispatch('incrementFirestoreCounter', 1);
+    },
     doBatchActionWithFirestoreCommands({state}){
       const id = Object.keys(state.data)[0]
       const db = Firebase.firestore()

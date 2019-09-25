@@ -12,6 +12,9 @@
   <div>
     <button @click="doBatchActionWithFirestoreCommands">Batch Firestore</button>
   </div>
+  <div>
+    <button @click="easyFirestoreSetalueBatchSyncIncrement">EasyFirestore with batchSync</button>
+  </div>
   </div>
 </template>
 
@@ -27,7 +30,12 @@ export default {
   },
   methods: {
     ...mapActions(['incrementCounter']),
-    ...mapActions('firestoreCounter', ['incrementFirestoreCounter', 'subscribeToCounter', 'unsubscribeToCounter', 'setFirestoreCounterToZero', 'doBatchActionWithFirestoreCommands'])
+    ...mapActions('firestoreCounter', ['incrementFirestoreCounter',
+     'subscribeToCounter',
+      'unsubscribeToCounter',
+       'setFirestoreCounterToZero',
+        'doBatchActionWithFirestoreCommands',
+        'easyFirestoreSetalueBatchSyncIncrement'])
   },
   mounted(){
     console.log('this', this);
